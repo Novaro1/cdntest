@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>GitHub Fetch Loader</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    iframe {
+      border: none;
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="viewer"></iframe>
+
+  <script>
+    async function loadGithubPage() {
+      const githubURL = "https://cdn.jsdelivr.net/gh/novaro1/cdntest/index.html";
+
+      const response = await fetch(githubURL);
+      const html = await response.text();
+
+      // Create a blob so the iframe renders it as an actual page
+      const blob = new Blob([html], { type: "text/html" });
+      const url = URL.createObjectURL(blob);
+
+      document.getElementById("viewer").src = url;
+    }
+
+    loadGithubPage();
+  </script>
+</body>
+</html>
