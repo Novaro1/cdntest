@@ -2,7 +2,7 @@
 Test for cdn to unrestrict goguardian
 
 # How to use:
-1. Go to putthisinyoursite.html and copy and paste it
+1. Go to putthisinyourpage.html and copy and paste it
 2. Put it in any html editor like google sites, or alternatively just run the file.
 3. Everything should be unblocked
 
